@@ -30,29 +30,29 @@ header {
     height: 120px;
     top: 0;
     z-index: 1000;
-    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
 }
 
 .logo {
     width: 100px;
     height: auto;
-    float: left;
 }
 
 .nav {
-    float: right;
-    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .nav-list {
     list-style: none;
+    display: flex;
     margin: 0;
     padding: 0;
-}
-
-.nav-list li {
-    display: inline-block;
-    margin-left: 20px;
+    gap: 20px;
 }
 
 .nav-list a {
@@ -67,7 +67,6 @@ header {
     cursor: url("/MODULO-03/landing-page/img/patinha.png"), auto;
 }
 
-
 /* Estilos da seção de capa */
 .capa {
     background-image: url('../img/capa.png');
@@ -75,18 +74,16 @@ header {
     background-position: center;
     color: #4e342e;
     height: calc(100vh - 60px); 
-    display: table;
-    width: 100%;
-    text-align: right; 
-    padding-right: 50px; 
-    margin-top: 100px; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    padding-right: 50px;
+    margin-top: 100px;
 }
 
 .capa-content {
-    display: table-cell;
-    vertical-align: middle;
     text-align: right;
-    padding-right: 50px;
 }
 
 .capa h1 {
@@ -114,15 +111,12 @@ header {
 .capa .book-button:hover {
     background-color: #e55342;
     cursor: url("/MODULO-03/landing-page/img/patinha.png"), auto;
-
 }
 
 /* Estilos da seção de serviços */
 .servicos {
     background-color: #C0A78C;
     color: #ffffff;
-    position: relative;
-    overflow: hidden;
     padding: 50px 0;
     text-align: center;
 }
@@ -130,7 +124,6 @@ header {
 .servicos .content {
     width: 80%;
     margin: 0 auto;
-    text-align: center;
 }
 
 .servicos h2 {
@@ -144,20 +137,20 @@ header {
 }
 
 .servicos .services {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .servicos .service-item {
-    display: inline-block;
-    vertical-align: top;
-    width: 30%;
+    flex: 1 1 calc(30% - 2%);
     margin: 0 1%;
     text-align: center;
 }
 
 .servicos .service-item img {
     display: block;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 10px;
     width: 130px;
     height: 130px;
     border-radius: 50%;
@@ -166,7 +159,6 @@ header {
 
 .servicos .service-item p {
     margin-top: 0;
-    text-align: center;
 }
 
 /* Estilos da seção de menu */
@@ -178,10 +170,12 @@ header {
 }
 
 .menu-content {
-    display: table;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     max-width: 1200px;
+    margin: 0 auto;
 }
 
 .menu h1 {
@@ -194,15 +188,15 @@ header {
 }
 
 .menu-columns {
-    display: table;
+    display: flex;
     width: 100%;
+    justify-content: space-between;
     margin: 30px 0;
+    flex-wrap: wrap;
 }
 
 .menu-column {
-    display: table-cell;
-    vertical-align: top;
-    width: 50%;
+    flex: 1 1 45%;
     padding: 0 20px;
     box-sizing: border-box;
 }
@@ -229,15 +223,12 @@ header {
 .mascotes {
     background-color: #C0A78C;
     color: #ffffff;
-    position: relative;
-    overflow: hidden;
     padding: 50px 0;
 }
 
 .mascotes .content {
     width: 80%;
     margin: 0 auto;
-    text-align: center;
 }
 
 .mascotes h2 {
@@ -251,24 +242,21 @@ header {
 }
 
 .mascotes .cats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5%;
     margin-top: 30px;
 }
 
-.mascotes .row {
-    margin-bottom: 20px;
-}
-
 .mascotes .cat-item {
-    display: inline-block;
-    vertical-align: top;
-    width: 22%; 
-    margin: 0 1.5%; 
+    flex: 1 1 22%;
     text-align: center;
 }
 
 .mascotes .cat-item img {
     display: block;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 10px;
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -277,7 +265,6 @@ header {
 
 .mascotes .cat-item p {
     margin-top: 0;
-    text-align: center;
 }
 
 /* Estilos da seção de reservas */
@@ -286,8 +273,6 @@ header {
     background-size: cover;
     background-position: center;
     color: #000000;
-    position: relative;
-    overflow: hidden;
     padding: 50px 0;
 }
 
@@ -317,7 +302,7 @@ form textarea {
     margin-top: 0.5em;
     border: 1px solid #8d6e63;
     border-radius: 5px;
-    width: calc(100% - 12px); 
+    width: calc(100% - 12px);
     box-sizing: border-box;
 }
 
@@ -354,4 +339,71 @@ footer .footer-content {
 footer .address {
     margin-bottom: 10px;
     font-size: 14px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+    .nav {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .capa {
+        padding-right: 20px;
+    }
+    .capa h1 {
+        font-size: 36px;
+    }
+    .capa p {
+        font-size: 16px;
+    }
+    .servicos .service-item {
+        flex: 1 1 calc(100% - 2%);
+        margin-bottom: 20px;
+    }
+    .menu-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu-column {
+        flex: 1 1 100%;
+        padding: 10px;
+    }
+    .mascotes .cat-item {
+        flex: 1 1 calc(45% - 2%);
+        margin-bottom: 20px;
+    }
+    form label {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-list a {
+        font-size: 16px;
+    }
+    .capa h1 {
+        font-size: 28px;
+    }
+    .capa p {
+        font-size: 14px;
+    }
+    .menu h2 {
+        font-size: 36px;
+    }
+    .menu-item h3 {
+        font-size: 20px;
+    }
+    .mascotes .cat-item {
+        flex: 1 1 calc(100% - 2%);
+    }
 }

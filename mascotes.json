@@ -1,0 +1,30 @@
+[
+    {
+        "nome": "Mô",
+        "descricao": "Mô é um gato muito brincalhão e adora correr atrás de brinquedos."
+    },
+    {
+        "nome": "Joaquim",
+        "descricao": "Joaquim é um gato calmo e gosta de tirar sonecas no sol."
+    },
+    {
+        "nome": "Bebê",
+        "descricao": "Bebê é muito carinhoso e adora receber atenção dos visitantes."
+    },
+    {
+        "nome": "Chato",
+        "descricao": "Chato é um gato curioso e está sempre explorando novos lugares."
+    },
+    {
+        "nome": "Bia",
+        "descricao": "Bia é uma gata elegante e adora observar os pássaros pela janela."
+    },
+    {
+        "nome": "Sassá",
+        "descricao": "Sassá é muito sociável e gosta de fazer novas amizades."
+    },
+    {
+        "nome": "Peludinho",
+        "descricao": "Peludinho é muito ativo e está sempre em movimento."
+    }
+]
