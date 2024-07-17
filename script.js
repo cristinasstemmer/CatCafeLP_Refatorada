@@ -19,8 +19,7 @@ function showThankYouMessage() {
 document.addEventListener('DOMContentLoaded', (event) => {
     const reservationForm = document.getElementById('reservationForm');
     const reservationsList = document.getElementById('reservationsList');
-
-    // Carregar as reservas ao carregar a página
+    
     loadReservations();
 
     reservationForm.addEventListener('submit', function (e) {
@@ -96,7 +95,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const cats = document.querySelectorAll('.cat-item');
     const descriptionDiv = document.getElementById('cat-description');
 
-    // Carregar descrições dos mascotes
     function loadCatDescriptions() {
         return fetch('mascotes.json')
             .then(response => response.json())
