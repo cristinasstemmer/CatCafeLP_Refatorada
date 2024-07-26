@@ -14,8 +14,8 @@
         <a href="#">
             <img src="./img/logo.png" alt="Logo" class="logo">
         </a>
-        <nav class="nav inline">
-            <ul class="inline nav-list">
+        <nav class="nav">
+            <ul class="nav-list">
                 <li class="inline"><a href="#services">Serviços</a></li>
                 <li class="inline"><a href="#menu">Menu</a></li>
                 <li class="inline"><a href="#mascotes">Mascotes</a></li>
@@ -156,7 +156,8 @@
 <section id="reservas" class="reservas">
     <div class="reservations-content">
         <h2>Reservas</h2>
-        <form id="reservation-form" action="reserve_table.php" method="post" onsubmit="return showThankYouMessage()">
+        <form id="reservationForm">
+            <input type="hidden" id="reservationId">
             <label for="name">Nome:</label>
             <input type="text" id="name" name="name" required>
             
@@ -170,25 +171,26 @@
             <input type="date" id="date" name="date" required>
             
             <label for="time">Hora:</label>
-            <input type="time" id="time" name="time" required>
+            <input type="time" id="time" name="time" min="08:00" max="18:00" required>
             
             <button type="submit">Reservar</button>
         </form>
+        <div id="reservationsList"></div>
     </div>
 </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="text">
-                <p>Miauvenida Ronronar, 123 - Bairro Miau - Gatolândia, Brasil</p>
-            </div>
-            <p>© 2024 Sete Vidas Cat Cafe. </p>
+<footer>
+    <div class="footer-content">
+        <div class="text">
+            <p>Miauvenida Ronronar, 123 - Bairro Miau - Gatolândia, Brasil</p>
         </div>
-    </footer>
+        <p>© 2024 Sete Vidas Cat Cafe. </p>
+    </div>
+</footer>
 
 <script src="/lp-refatorada/javascript/scriptAgradecimento.js"></script>
 <script src="/lp-refatorada/javascript/scriptMascotes.js"></script>
-<script src="/lp-refatorada/javascript/scriptReservas.js"></script>
+<script src="/lp-refatorada/javascript/scriptReservas.js" defer></script>
 
 </body>
 </html>

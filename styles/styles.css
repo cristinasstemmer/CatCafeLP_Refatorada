@@ -1,12 +1,12 @@
 /* Estilos gerais */
 @font-face {
     font-family: 'Titulos';
-    src: url('/MODULO-03/landing-page/fonts/AnyConv.com__Phatkidfree-K70R7.ttf') format('truetype');
+    src: url('/lp-refatorada/fonts/AnyConv.com__Phatkidfree-K70R7.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Textos';
-    src: url('/MODULO-03/landing-page/fonts/Nunito-Variable.ttf') format('truetype');
+    src: url('/lp-refatorada/fonts/Nunito-Variable.ttf') format('truetype');
 }
 
 h1 {
@@ -32,7 +32,13 @@ header {
     z-index: 1000;
     display: flex;
     align-items: center;
+}
+
+.content-limit {
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
     padding: 0 50px;
 }
 
@@ -44,7 +50,6 @@ header {
 .nav {
     display: flex;
     align-items: center;
-    gap: 20px;
 }
 
 .nav-list {
@@ -52,7 +57,10 @@ header {
     display: flex;
     margin: 0;
     padding: 0;
-    gap: 20px;
+}
+
+.nav-list li {
+    margin-left: 20px;
 }
 
 .nav-list a {
@@ -64,7 +72,7 @@ header {
 
 .nav-list a:hover {
     color: #ff6347;
-    cursor: url("/MODULO-03/landing-page/img/patinha.png"), auto;
+    cursor: url("/lp-refatorada/img/patinha.png"), auto;
 }
 
 /* Estilos da seção de capa */
@@ -110,7 +118,7 @@ header {
 
 .capa .book-button:hover {
     background-color: #e55342;
-    cursor: url("/MODULO-03/landing-page/img/patinha.png"), auto;
+    cursor: url("/lp-refatorada/img/patinha.png"), auto;
 }
 
 /* Estilos da seção de serviços */
@@ -169,15 +177,6 @@ header {
     padding: 50px 0;
 }
 
-.menu-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 .menu h1 {
     margin-bottom: 0;
 }
@@ -187,22 +186,22 @@ header {
     font-size: 48px;
 }
 
-.menu-columns {
+.menu-content {
     display: flex;
-    width: 100%;
     justify-content: space-between;
-    margin: 30px 0;
+    width: 80%;
+    margin: 0 auto;
     flex-wrap: wrap;
 }
 
 .menu-column {
-    flex: 1 1 45%;
-    padding: 0 20px;
-    box-sizing: border-box;
+    flex: 0 0 45%;
+    margin-bottom: 30px;
 }
 
 .menu-item {
     margin-bottom: 30px;
+    text-align: left;
 }
 
 .menu-item h3 {
@@ -271,6 +270,17 @@ header {
     margin-top: 0;
 }
 
+.cat-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%; 
+    padding: 20px;
+    border-radius: 10px; 
+}
+
 /* Estilos da seção de reservas */
 .reservas {
     background-image: url('../img/reservar.png');
@@ -323,7 +333,7 @@ form button {
 
 form button:hover {
     background: #bcaaa4;
-    cursor: url("/MODULO-03/landing-page/img/patinha.png"), auto;
+    cursor: url("./lp-refatorada/img/patinha.png"), auto;
 }
 
 /* Estilos do rodapé */
@@ -361,17 +371,24 @@ footer .address {
         flex-direction: column;
         gap: 10px;
     }
-    .capa {
-        padding-right: 20px;
+    .nav-list li {
+        margin-left: 0;
     }
     .capa h1 {
-        font-size: 36px;
+        font-size: 32px;
     }
     .capa p {
         font-size: 16px;
     }
-    .servicos .service-item {
-        flex: 1 1 calc(100% - 2%);
+    .capa .book-button {
+        font-size: 16px;
+    }
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+    .services .service-item {
+        flex: 1 1 calc(45% - 2%);
         margin-bottom: 20px;
     }
     .menu-columns {

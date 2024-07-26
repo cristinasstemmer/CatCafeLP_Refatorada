@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const reservationForm = document.getElementById('reservationForm')
     const reservationsList = document.getElementById('reservationsList')
-    
+
     loadReservations()
 
     reservationForm.addEventListener('submit', function (e) {
@@ -11,9 +11,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const number = document.getElementById('number').value
         const date = document.getElementById('date').value
         const time = document.getElementById('time').value
+        const reservationId = document.getElementById('reservationId').value
 
         const newReservation = {
-            id: Date.now(),
+            id: reservationId ? parseInt(reservationId) : Date.now(),
             name: name,
             email: email,
             number: number,
@@ -28,7 +29,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     function saveReservation(reservation) {
         let reservations = JSON.parse(localStorage.getItem('reservations')) || []
-        reservations.push(reservation);
+        let index = reservations.findIndex(res => res.id === reservation.id)
+
+        if (index === -1) {
+            reservations.push(reservation)
+        } else {
+            reservations[index] = reservation
+        }
         localStorage.setItem('reservations', JSON.stringify(reservations))
     }
 
@@ -54,15 +61,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     window.editReservation = function (id) {
         let reservations = JSON.parse(localStorage.getItem('reservations')) || []
-        let reservation = reservations.find(res => res.id === id)
+        let reservationIndex = reservations.findIndex(res => res.id === id)
+        if (reservationIndex === -1) return 
+        let reservation = reservations[reservationIndex]
 
         document.getElementById('name').value = reservation.name
         document.getElementById('email').value = reservation.email
         document.getElementById('number').value = reservation.number
         document.getElementById('date').value = reservation.date
         document.getElementById('time').value = reservation.time
+        document.getElementById('reservationId').value = reservation.id
 
-        deleteReservation(id)
+        reservations.splice(reservationIndex, 1)
+        localStorage.setItem('reservations', JSON.stringify(reservations))
     }
 
     window.deleteReservation = function (id) {

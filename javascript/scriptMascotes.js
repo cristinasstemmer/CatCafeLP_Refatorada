@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             cat.addEventListener('click', () => {
                 const catName = cat.getAttribute('data-nome')
                 const description = descriptions[catName]
-                descriptionDiv.innerHTML = `<h3>${catName}</h3><p>${description}</p>`
+                descriptionDiv.innerHTML = `<p>${description}</p>`
             })
         })
     })
