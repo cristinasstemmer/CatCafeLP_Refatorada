@@ -17,6 +17,8 @@ NOVAS FEATURES:
 - Acréscimo de operações CRUD com o LocalStorage;
 - Responsividade completa.
 
+EXTRA: correção para que o formulário aceite horários apenas entre 08h e 18h.
+
 ## Instalação e Uso
 
 1. Clone o repositório para o seu computador:
