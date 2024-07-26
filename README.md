@@ -12,8 +12,8 @@ Uma experiência única e relaxante para todos os amantes de gatos e café.
 NOVAS FEATURES:
 
 - Criação de uma branche adicional para o desenvolvimento dos novos recursos do projeto;
-- Reestruturação da aplicação para que ela seja estruturada através de Grid e Flexbox;
-- Transformar as transições para sejam assíncronas através de: ajax, fetch e promises;
+- Reestruturação da aplicação para que ela seja estruturada através de Grid/Flexbox;
+- Transformar as transições para sejam assíncronas através de: ajax, fetch e/ou promises;
 - Acréscimo de operações CRUD com o LocalStorage;
 - Responsividade completa.
 
